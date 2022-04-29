@@ -11,11 +11,10 @@ const vegetable = data.filter(obj=>(obj.type === "vegetable")? true:false);
 
 const user = data.filter(obj=> (obj.type === "user")?true : false);
 
-const numberLength = 6
-resetPrint(data)
+const numberLength = 6;
+resetPrint(data);
 
-selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animals")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user) 
-,100))
+selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animals")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user),100));
 
 function prntHtml(array){array.forEach(obj => { const {color, name, prefix} = obj;
         bana.innerHTML += `
