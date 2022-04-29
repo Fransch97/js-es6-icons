@@ -1,4 +1,4 @@
-[
+const data = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,4 @@
 		color: 'blue'
 	}
 ];
+
