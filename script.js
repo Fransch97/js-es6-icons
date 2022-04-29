@@ -46,9 +46,22 @@ selectTag.addEventListener('change', function(){
 })
 
 
-function prntHtml(){
+function prntHtml(array){
     const row = document.querySelector('.row')
     console.log(row)
+    array.forEach(obj => {
+        const {color, name, prefix,} = obj
+        row.innerHTML += `
+        <!-- CARD  -->
+        <div class="col-12 col-md-6 col-lg-2">
+            <div class="card text-center" style="color: ${color}">
+                <h1><i class="${prefix}-solid ${prefix}-${name} "></i></h1>
+                <p>${name.charAt(0).toUpperCase() + name.slice(1)}</p>
+            </div>
+        </div>
+        <!--END CARD  -->
+        `;
+    });
 }
 
-prntHtml()
+prntHtml(data)
