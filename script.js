@@ -4,9 +4,9 @@ const selectTag = document.querySelector('select');
 //get row
 const bana = document.querySelector('.bana');
 //creat arrays
-const animals = data.filter(obj=>(obj.type === "animal")? true: false);
-const vegetable = data.filter(obj=>(obj.type === "vegetable")? true:false);
-const user = data.filter(obj=> (obj.type === "user")?true : false);
+const animals = data.filter(obj=>(obj.type === "animal"));
+const vegetable = data.filter(obj=>(obj.type === "vegetable"));
+const user = data.filter(obj=> (obj.type === "user"));
 //color number # length
 const numberLength = 6;
 //event "change"
