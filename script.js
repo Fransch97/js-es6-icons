@@ -39,11 +39,4 @@ function rndNumber(max){ return Math.floor(Math.random()*max)};
 //generate ramìndom abc
 function randmAf(array){ return array[rndNumber(array.length)] };
 function numbrOrAf(array, max){ return (rndNumber(2) > 0)? rndNumber(max): randmAf(array)};
-function randomColor(array,max){ const nA = [];
-    for(i = 0; i< numberLength; i++){
-        nA.push(numbrOrAf(aF, 10))
-    }
-    const color = nA.join("")
-    console.log()
-    return color
-}
+function randomColor(array,max){ const nA = []; for(i = 0; i< numberLength; i++){nA.push(numbrOrAf(aF, 10))};const color = nA.join(""); return color}
