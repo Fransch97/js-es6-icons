@@ -13,6 +13,7 @@ const numberLength = 6;
 selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animals")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user),100));
 //reset at start and under the funciton's
 resetPrint(data);
+function resetPrint(array){ bana.innerHTML = ""; prntHtml(array)};
 function prntHtml(array){array.forEach(obj => { const {color, name, prefix} = obj;
         bana.innerHTML += `
         <div class="col-12 col-md-4 col-lg-2 mt-4 mb-4">
@@ -24,8 +25,6 @@ function prntHtml(array){array.forEach(obj => { const {color, name, prefix} = ob
         `;
     });
 };
-
-function resetPrint(array){ bana.innerHTML = ""; prntHtml(array)};
 //generate random color all functions
 function rndNumber(max){ return Math.floor(Math.random()*max)};
 function randmAf(array){ return array[rndNumber(array.length)] };
