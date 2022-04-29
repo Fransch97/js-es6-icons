@@ -24,9 +24,12 @@ console.log(data)
 const selectTag = document.querySelector('select')
 console.log(selectTag)
 
-selectTag.addEventListener('focus', function(){
-    const getValue = setInterval(()=>console.log(selectTag.value),500);
-    setTimeout(()=>clearInterval(getValue), 10000);
+selectTag.addEventListener('change', function(){
+    console.log(selectTag.value);
+   
 })
+
+
+
 
 data.forEach(object => console.log(object))
