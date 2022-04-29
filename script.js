@@ -2,18 +2,14 @@ console.log(data)
 const aF = ["A","B","C","D","E","F"];
 
 const selectTag = document.querySelector('select');
-console.log(selectTag);
 
 const bana = document.querySelector('.bana');
 
 const animals = data.filter(obj=>(obj.type === "animal")? true: false);
-console.log(animals ,"animals")
 
 const vegetable = data.filter(obj=>(obj.type === "vegetable")? true:false);
-console.log(vegetable ,"vegetable")
 
 const user = data.filter(obj=> (obj.type === "user")?true : false);
-console.log(user ,"user")
 
 const numberLength = 6
 resetPrint(data)
