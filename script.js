@@ -12,6 +12,10 @@ console.log("yes master");
 
 console.log(data)
 
+// riconoscenere il valore select FATTO
+//devo separare i tipi ?array diversi?
+//devo filtrare i nomi
+//devo filtrare 
 // <!-- CARD  -->
 // <div class="col-12 col-md-6 col-lg-2">
 //     <div class="card text-center">
@@ -21,15 +25,30 @@ console.log(data)
 // </div>
 // <!--END CARD  -->
 
-const selectTag = document.querySelector('select')
-console.log(selectTag)
+const selectTag = document.querySelector('select');
+console.log(selectTag);
+
+const animals = data.filter(obj=>(obj.type === "animal")? true: false);
+console.log(animals ,"animals")
+
+const vegetable = data.filter(obj=>(obj.type === "vegetable")? true:false);
+console.log(vegetable ,"vegetable")
+
+// testing else if destruttured XD
+// const user = data.filter(obj=> (obj.type === "user")?true :(obj.type === "animal")? true: "");
+const user = data.filter(obj=> (obj.type === "user")?true : false);
+console.log(user ,"user")
 
 selectTag.addEventListener('change', function(){
     console.log(selectTag.value);
-   
+    console.log(data)
+    
 })
 
 
+function prntHtml(){
+    const row = document.querySelector('.row')
+    console.log(row)
+}
 
-
-data.forEach(object => console.log(object))
+prntHtml()
