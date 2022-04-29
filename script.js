@@ -12,19 +12,6 @@ console.log("yes master");
 
 console.log(data)
 
-// riconoscenere il valore select FATTO
-//devo separare i tipi ?array diversi?
-//devo filtrare i nomi
-//devo filtrare 
-// <!-- CARD  -->
-// <div class="col-12 col-md-6 col-lg-2">
-//     <div class="card text-center">
-//         <h1><i class="fa-solid fa-horse "></i></h1>
-//         <p>Cavallo</p>
-//     </div>
-// </div>
-// <!--END CARD  -->
-
 const selectTag = document.querySelector('select');
 console.log(selectTag);
 
