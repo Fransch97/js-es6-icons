@@ -30,32 +30,28 @@ console.log(selectTag);
 
 const bana = document.querySelector('.bana');
 
-
 const animals = data.filter(obj=>(obj.type === "animal")? true: false);
 console.log(animals ,"animals")
 
 const vegetable = data.filter(obj=>(obj.type === "vegetable")? true:false);
 console.log(vegetable ,"vegetable")
 
-// testing else if destruttured XD
-// const user = data.filter(obj=> (obj.type === "user")?true :(obj.type === "animal")? true: "");
 const user = data.filter(obj=> (obj.type === "user")?true : false);
 console.log(user ,"user")
-
+resetPrint(data)
 selectTag.addEventListener('change', ()=>{
     console.log(selectTag.value);
 (selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animals")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user); 
 })
 
-
 function prntHtml(array){
     console.log(bana)
     array.forEach(obj => {
-        const {color, name, prefix,} = obj;
+        const {color, name, prefix, family} = obj;
         bana.innerHTML += `
-        <div class="col-12 col-md-6 col-lg-2 ">
+        <div class="col-12 col-md-6 col-lg-2 mt-4 mb-4">
             <div class="card text-center pb-5 pt-5" style="color: ${color}">
-                <h1><i class="${prefix}-solid ${prefix}${name} "></i></h1>
+                <h1><i class="${prefix}solid ${prefix}${name} "></i></h1>
                 <p>${name.charAt(0).toUpperCase() + name.slice(1)}</p>
             </div>
         </div>
@@ -67,3 +63,4 @@ function resetPrint(array){
     bana.innerHTML = ""
     prntHtml(array)
 }
+
