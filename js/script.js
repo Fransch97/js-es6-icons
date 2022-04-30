@@ -1,8 +1,10 @@
 const aF = ["A","B","C","D","E","F"];
 //get select
 const selectTag = document.querySelector('select');
+// controll all types if new push
+const types = ["all"], controlTypes = (arrToPush) =>{data.forEach(el => (!arrToPush.includes(el.type)) ?arrToPush.push(el.type):"")}; controlTypes(types); console.log(types)
 //insert dinamic into select the options                                                                                                     
-const types = ['all','animals','vegetable','user'], options = (array)=>{array.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options(types);
+const options = (array)=>{array.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options(types);
 //get row
 const row = document.querySelector('.bana');
 //creat arrays animals && vegetable && user
@@ -10,7 +12,7 @@ const animals = data.filter(obj=>(obj.type === "animal")), vegetable = data.filt
 //color number # length
 const numberLength = 6;
 //event "change"
-selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animals")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user),100));
+selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animal")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user),100));
 //reset at start + under the funciton's
 resetPrint(data);
 function resetPrint(array){ row.innerHTML = ""; prntHtml(array)};
