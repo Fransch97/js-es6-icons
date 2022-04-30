@@ -2,7 +2,7 @@ const aF = ["A","B","C","D","E","F"];
 //get select
 const selectTag = document.querySelector('select');
 //insert dinamic into select the options                                                                                                     
-const options = ()=>{const X = ['all','animals','vegetable','user'];  X.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options();
+const types = ['all','animals','vegetable','user'], options = (array)=>{array.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options(types);
 //get row
 const row = document.querySelector('.bana');
 //creat arrays animals && vegetable && user
