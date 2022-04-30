@@ -5,14 +5,19 @@ const selectTag = document.querySelector('select');
 const types = ["all"], controlTypes = (arrToPush) =>{data.forEach(el => (!arrToPush.includes(el.type)) ?arrToPush.push(el.type):"")}; controlTypes(types); console.log(types)
 //insert dinamic into select the options                                                                                                     
 const options = (array)=>{array.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options(types);
+// creare un arrary di arry di oggetti in base al array delle categorie
+const typesObjArr =[];
+// creare una funzione di un array basato sul array sopra scritto con un ciclo con un ciclo anidato
+const arrArrObj = (basearr,arrTopushArr, objlist)=>{basearr.forEach(types => arrTopushArr.push(objlist.filter(obj=>(obj.type === types))))}; arrArrObj(types,typesObjArr,data,data); console.log(typesObjArr)
+const conditionsChecker = (arrary,value)=> {arrary.forEach((array,index) =>{console.log(array.forEach(element=>{(element.type === value)? resetPrint(array): ""}))})}; conditionsChecker(typesObjArr,selectTag.value);
 //get row
 const row = document.querySelector('.bana');
-//creat arrays animals && vegetable && user
-const animals = data.filter(obj=>(obj.type === "animal")), vegetable = data.filter(obj=>(obj.type === "vegetable")),user = data.filter(obj=> (obj.type === "user"));
 //color number # length
 const numberLength = 6;
+
 //event "change"
-selectTag.addEventListener('change', ()=>setInterval(()=>(selectTag.value === "all")? resetPrint(data) :(selectTag.value === "animal")?  resetPrint(animals) :(selectTag.value === "vegetable")?  resetPrint(vegetable)   : resetPrint(user),100));
+selectTag.addEventListener('change',()=>setInterval(()=> {conditionsChecker(typesObjArr,selectTag.value)},100));//resetPrint(data)
+
 //reset at start + under the funciton's
 resetPrint(data);
 function resetPrint(array){ row.innerHTML = ""; prntHtml(array)};
@@ -32,3 +37,4 @@ function rndNumber(max){ return Math.floor(Math.random()*max)};
 function randmAf(array){ return array[rndNumber(array.length)] };
 function numbrOrAf(array, max){ return (rndNumber(2) > 0)? rndNumber(max): randmAf(array)};
 function randomColor(array,max){ const nA = []; for(i = 0; i< numberLength; i++){nA.push(numbrOrAf(array, max))};const color = nA.join(""); return color};
+
