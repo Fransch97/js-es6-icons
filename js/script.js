@@ -9,6 +9,7 @@ const options = (array)=>{array.forEach(el =>{const opt = document.createElement
 const typesObjArr =[];
 // creare una funzione di un array basato sul array sopra scritto con un ciclo con un ciclo anidato
 const arrArrObj = (basearr,arrTopushArr, objlist)=>{basearr.forEach(types => arrTopushArr.push(objlist.filter(obj=>(obj.type === types))))}; arrArrObj(types,typesObjArr,data,data); console.log(typesObjArr)
+// creare una funzione che in base al tipo di valore selezionato stampa l'array degli oggetti giusto che stanno dentro al array di array di oggetti
 const conditionsChecker = (arrary,value)=> {arrary.forEach((array,index) =>{console.log(array.forEach(element=>{(element.type === value)? resetPrint(array): ""}))})}; conditionsChecker(typesObjArr,selectTag.value);
 //get row
 const row = document.querySelector('.bana');
