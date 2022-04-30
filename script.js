@@ -1,12 +1,12 @@
 const aF = ["A","B","C","D","E","F"];
 //get select
 const selectTag = document.querySelector('select');
+//insert dinamic into select the options                                                                                                     
+const options = ()=>{const X = ['all','animals','vegetable','user'];  X.forEach(el =>{const opt = document.createElement('option'); opt.value= el; opt.innerHTML = el; selectTag.append(opt)})}; options();
 //get row
 const bana = document.querySelector('.bana');
-//creat arrays
-const animals = data.filter(obj=>(obj.type === "animal"));
-const vegetable = data.filter(obj=>(obj.type === "vegetable"));
-const user = data.filter(obj=> (obj.type === "user"));
+//creat arrays animals && vegetable && user
+const animals = data.filter(obj=>(obj.type === "animal")), vegetable = data.filter(obj=>(obj.type === "vegetable")),user = data.filter(obj=> (obj.type === "user"));
 //color number # length
 const numberLength = 6;
 //event "change"
@@ -29,4 +29,4 @@ function prntHtml(array){array.forEach(obj => { const {color, name, prefix} = ob
 function rndNumber(max){ return Math.floor(Math.random()*max)};
 function randmAf(array){ return array[rndNumber(array.length)] };
 function numbrOrAf(array, max){ return (rndNumber(2) > 0)? rndNumber(max): randmAf(array)};
-function randomColor(array,max){ const nA = []; for(i = 0; i< numberLength; i++){nA.push(numbrOrAf(array, max))};const color = nA.join(""); return color}
+function randomColor(array,max){ const nA = []; for(i = 0; i< numberLength; i++){nA.push(numbrOrAf(array, max))};const color = nA.join(""); return color};
